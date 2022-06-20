@@ -1,0 +1,28 @@
+<div class="product-case" product-id="{% ID %}">
+    <img class="img" src="/mvp/img/products/{% ImageOne %}">
+    <div class="price">
+        {% Price %}Р
+    </div>
+    <div class="text" id="casetwo">
+        {% Name %}
+    </div>
+    <table width="100%">
+        <tr>
+            <td>
+                <div class="loading">
+                    <div class="active-load" style="width: {% percent %}%;"></div>
+                </div>
+            </td>
+            <td width="1">
+                <div class="percent">
+                    {% percent %}%
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="caseone">
+        <a tobasket class="basket" onclick="event.stopPropagation(); addBacket(this, {% ID %})">&#128722;</a>
+        <!-- <button >Добавить в корзину</button> -->
+        <!-- <a class="order" addBacket()>Добавить в корзину</a> -->
+    </div>
+</div>

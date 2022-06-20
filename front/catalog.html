@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог</title>
+
+    <link rel="stylesheet" href="/mvp/css/description.css">
+    <link rel="stylesheet" href="/mvp/css/image-slider.css">
+    <link rel="stylesheet" href="/mvp/css/product.css">
+    <link rel="stylesheet" href="/mvp/css/main.css">
+    <link rel="stylesheet" href="/mvp/css/card.css">
+
+    <script src="/mvp/js/main.js"></script>
+    <script src="/mvp/js/requests.js"></script>
+    <script src="/mvp/js/templates.js"></script>
+    <script src="/mvp/js/catalog.js"></script>
+    <script src="/mvp/js/backet.js"></script>
+    <script src="/mvp/js/image-slider.js"></script>
+
+    <style>
+        #full-wrapper {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+        }
+        
+        #full-wrapper>* {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: show-wrapper 0.3s;
+        }
+        
+        @keyframes show-wrapper {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .blurring {
+            transition: filter 0.3s;
+            filter: blur(10px);
+        }
+    </style>
+</head>
+
+<body>
+    <table class="stroka">
+        <tr>
+            <td>
+                <input class="search" type="text" placeholder="Искать здесь...">
+                <button id="search" type="submit">&#128269</button>
+            </td>
+            <td>
+                <div class="sss">
+                    <a id="profile" href="/mvp/profile.html">Профиль</a>
+                    <!-- <a href="">Регистрация/Вход</a> -->
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="setka_korzina">
+        <tr>
+            <td class="korzina-td">
+                <div id="backet" style="min-width: 200px;" class="korzina">
+                    <h3 style="padding-left: 15px;padding-top: 10px;padding-right: 15px;">Корзина</h3>
+                    <div id="basket-products">
+
+                    </div>
+                </div>
+                <button onclick="buyBacket()" style="width: 100%; padding: 5px 10px; margin-top: 10px; background: white; border-radius: 20px; border: none;">Купить</button>
+            </td>
+            <td class="setka-td">
+                <div class="setka">
+                    <h3 style="padding-left: 20px;padding-top: 20px;">Товары</h3>
+                    <div id="catalog" class="set"></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="full-wrapper"></div>
+    <script>
+        add_on_loads(() => {
+            var userID = localStorage.getItem("userID");
+            if (userID == null) {
+                profile.href = "/mvp/auth.html";
+                profile.innerText = "Регистрация/Вход";
+            }
+        });
+    </script>
+</body>
+
+</html>

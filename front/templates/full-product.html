@@ -1,0 +1,48 @@
+
+<div class="case" product-id="{% ID %}">
+    <table>
+        <tr>
+            <td id="slider-case">
+                <div class="slider" onload="centering(this, document.querySelector('#slider-case'), 5);">
+                    <div id="big-image-container">
+                        <div id="image-items">
+                            <img id="big-image" onload="centering(items, this, 5);">
+                            <div id="items">
+
+                            </div>
+                            <div class="data">
+                                <blink>{% EndTime %} &#10071;</blink>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="caseone">
+                    <div class="name">
+                        {% Name %}
+                    </div>
+                    <div class="casethree">
+                        <div id="buttons" class="button">
+                            <div class="one">Описание</div>
+                            <div class="two">Вопрос-ответ</div>
+                            <div class="three">ВАЖНО!</div>
+                        </div>
+                        <div id="contents">
+                            <div class="description">
+                                {% Description %}
+                            </div>
+                            <div class="description">
+                                Здесь должны быть вопросы от заказчика и ответы
+                            </div>
+                            <div class="description">
+                                Необходимо знать, что цветок Спатифиллум относится к ядовитым растениям. Его листья содержит оксалат кальция, который при попадании на слизистые человека может вызвать раздражение желудка и воспаление глаз. От этого вещества начинает печь во рту, выделяется
+                                слюна, может даже появиться жжение в органах дыхания. Рекомендуем при работе с цветком надевать на руки перчатки или после работы хорошо помыть руки с мылом.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

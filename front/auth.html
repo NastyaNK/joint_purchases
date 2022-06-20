@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/aut.css">
+    <script src="/mvp/js/requests.js"></script>
+    <script src="/mvp/js/auth.js"></script>
+</head>
+
+<body class="background_index" id="body_auth">
+
+
+    <div class="login">
+        <a class="perehod" onclick="document.querySelector('.modal').hidden=false">&#8594;</a>
+        <h1>Вход</h1>
+        <label for="email"></label>
+        <div class="em"><input id="form_login_email" type="text" placeholder="Email" name="email" required></div>
+
+        <label for="password"></label>
+        <div class="log"><input id="form_login_password" type="password" placeholder="Введите пароль" name="password" required></div>
+
+        <div class="cl"><button class="exit" type="submit" onclick="login()">Войти</button></div>
+    </div>
+    <p id="login_error"></p>
+
+    <div class="modal" hidden onclick="this.hidden = true;">
+        <div class="register" id="register" onclick="event.stopPropagation()">
+            <h1>Регистрация</h1>
+            <label for="name"></label>
+            <input id="form_register_name" class="enter" type="text" placeholder="Введите имя" name="name" required>
+            <br>
+            <label for="email"></label>
+            <input id="form_register_email" class="enter" type="text" placeholder="Введите Email" name="email" required>
+            <br>
+            <label for="password"></label>
+            <input id="form_register_password" class="enter" type="password" placeholder="Введите пароль" name="password" required>
+            <br>
+            <label for="role"></label>
+            <input id="form_register_role" class="enter" type="text" placeholder="Введите роль" name="role" required>
+            <br>
+            <button class="reg" type="submit" onclick="register()">Register</button>
+        </div>
+    </div>
+    <p id="result_register"></p>
+</body>
+
+</html>

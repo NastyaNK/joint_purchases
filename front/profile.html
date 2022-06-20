@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог</title>
+
+    <link rel="stylesheet" href="/mvp/css/product.css">
+    <link rel="stylesheet" href="/mvp/css/profil.css">
+
+    <script src="/mvp/js/main.js"></script>
+    <script src="/mvp/js/requests.js"></script>
+    <script src="/mvp/js/templates.js"></script>
+    <script src="/mvp/js/catalog.js"></script>
+
+</head>
+
+<body>
+    <table class="stroka">
+        <tr>
+            <td>
+            </td>
+            <td>
+                <div class="sss">
+                    <a href="/mvp/catalog.html">Главная</a>
+                    <a href="" onclick="localStorage.removeItem('userID'); window.location = '/mvp/auth.html'">Выход</a>
+                    <!-- <a href="">Регистрация/Вход</a> -->
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="profil">
+        <table>
+            <tr>
+                <td>
+                    <div id="photo">
+                        <img id="photo_profil" src="/mvp/img/profil.jpg" alt="">
+                    </div>
+                </td>
+                <td class="user">
+                    <h3 id="user_name">Анна</h3>
+                    <h3 id="user_mail">Anna_sty@mail.ru</h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <h3>Корзина</h3>
+    <div id="korzina_profil">
+        <div id="vs">
+            <div>
+                <div class="effects">
+                    <img id="korzina_tovar" class="img" src="/mvp/img/one.jpg" alt="">
+                    <div>
+                        <h4>Цветок в горшке</h4>
+                        <p>+ количество -</p>
+                        <a>Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <div id="vs">
+                <div class="effects">
+                    <img id="korzina_tovar" class="img" src="/mvp/img/four.jpg" alt="">
+                    <div>
+                        <h4>Корзина цветов</h4>
+                        <p>+ количество -</p>
+                        <a>Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="effects">
+                    <img id="korzina_tovar" class="img" src="/mvp/img/two.jpg" alt="">
+                    <div>
+                        <h4>Ваза с цветами</h4>
+                        <p>+ количество -</p>
+                        <a>Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="effects">
+                    <img id="korzina_tovar" class="img" src="/mvp/img/three.jpg" alt="">
+                    <div>
+                        <h4>Кашпо с цветами</h4>
+                        <p>+ количество -</p>
+                        <a>Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 class="ps">Выполненые заказы</h3>
+    <div id="korzina_profil">
+        <div id="vs">
+            <div><img id="korzina_tovar" src="/mvp/img/five.jpg" alt=""></div>
+            <div><img id="korzina_tovar" src="/mvp/img/six.jpg" alt=""></div>
+            <div><img id="korzina_tovar" src="/mvp/img/seven.jpg" alt=""></div>
+            <div><img id="korzina_tovar" src="/mvp/img/eight.jpg" alt=""></div>
+        </div>
+    </div>
+    <script>
+        var userID = localStorage.getItem("userID");
+        add_on_loads(() => {
+            if (userID != null) {
+
+                send("/auth/user/" + userID, null, (status, result) => {
+                    if (status != 200) {
+                        window.location = "/mvp/auth.html";
+                        return;
+                    }
+                    user_name.innerText = result.Name;
+                    user_mail.innerText = result.Email;
+                });
+            } else {
+                window.location = "/mvp/auth.html";
+            }
+        });
+    </script>
+</body>
+
+</html>

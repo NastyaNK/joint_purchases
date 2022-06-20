@@ -1,0 +1,16 @@
+migration_storage:
+  storage_type: "postgres"
+  dsn: "postgres://postgres:sbermarket_paas@localhost:5432/mvp?sslmode=disable" # dsn: "postgres://postgres:postgrespw@localhost:5432/mvp?sslmode=disable"
+  schema: "public"
+  path: "data/migrations.db"
+
+projects:
+  project1:
+    migrations:
+    - postgres: ./migration
+  
+databases:
+  postgres:
+    type: postgres
+    dsn: "postgres://postgres:sbermarket_paas@localhost:5432/mvp?sslmode=disable" # dsn: "postgres://postgres:postgrespw@localhost:5432/mvp?sslmode=disable"
+    schema: "public"

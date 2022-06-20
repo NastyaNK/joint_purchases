@@ -1,0 +1,105 @@
+.product-case {
+    width: 240px;
+    height: 450px;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+    /* border:5px solid aqua;*/
+    justify-self: center;
+    transition: 0.6s;
+}
+
+.product-case:hover {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.product-case .img {
+    height: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-case .text {
+    font-family: 'Monotype Corsiva', cursive;
+    font-size: 20px;
+    text-align: left;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.product-case #casetwo {
+    width: 225px;
+    height: 25px;
+    /*border: 5px solid fuchsia;*/
+}
+
+.product-case .price {
+    font-family: 'Monotype Corsiva', cursive;
+    font-size: 40px;
+}
+
+.product-case .basket {
+    color: black;
+    box-sizing: content-box;
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    text-decoration: none;
+    border: .5em solid rgba(0, 0, 0, 0);
+    border-radius: 100%;
+    background: rgb(245, 245, 245) linear-gradient(rgb(245, 245, 245), rgb(188, 192, 193)) 50% 50% / calc(1.5em + .5em*2) calc(1.5em + .5em*2);
+    box-shadow: inset 0 -3px 10px rgba(255, 255, 255, 1), inset 0 3px 10px rgba(0, 0, 0, .4), 0 2px 4px rgba(0, 0, 0, .7);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+
+.product-case .loading {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 10px;
+    background: #494d5f;
+    box-shadow: inset 0 0 5px rgba(0, 204, 204, .2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.product-case .loading .active-load {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: red;
+}
+
+.product-case .percent {
+    right: 0;
+    border-left: 1px solid rgb(0, 204, 204);
+    display: inline-block;
+    font-size: 15px;
+    padding-left: 5px;
+}
+
+.product-case .order {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    color: black;
+}
+
+.product-case .caseone {
+    width: 235px;
+    height: 50px;
+    position: relative;
+}
